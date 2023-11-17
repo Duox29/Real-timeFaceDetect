@@ -32,6 +32,17 @@ MANIFEST
 *.manifest
 *.spec
 
+# Ignore all files and directories except Python files
+*
+!*/
+
+# Allow Python files
+!*.py
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
