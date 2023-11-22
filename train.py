@@ -31,7 +31,7 @@ for j in range (1,nModel+1):
     label.append(j-1)
 data1 = np.array(data)
 label = np.array(label)
-data1 = data1.reshape((500,100,100,1))
+data1 = data1.reshape((nModel*nImg,100,100,1))
 X_train = data1/255
 from sklearn.preprocessing import LabelBinarizer
 lb = LabelBinarizer()
@@ -68,5 +68,5 @@ Model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
 print("start training")
-Model.fit(X_train,trainY,batch_size=5,epochs=10)
+Model.fit(X_train,trainY,batch_size=5,epochs=15)
 Model.save("khuonmat.keras")
